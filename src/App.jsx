@@ -95,40 +95,43 @@ function App() {
 
       {displayResult ? (
         answered.length === 5 && submitted ? (
-          <div>
-            <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
-              <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
-            </div>
-            {/* <h2 className='text-lg pt-4'>Results:</h2> */}
-            {/* <p>CONFIDENCE: {scores.CONFIDENCE}</p>
-            <p>COUTURE: {scores.COUTURE}</p>
-            <p>COMFORT: {scores.COMFORT}</p> */}
+          <div className='flex flex-col w-full h-full items-center justify-around'>
+            <div className="flex flex-col">
+              <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
+                <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
+              </div>
+              {/* <h2 className='text-lg pt-4'>Results:</h2> */}
+              {/* <p>CONFIDENCE: {scores.CONFIDENCE}</p>
+              <p>COUTURE: {scores.COUTURE}</p>
+              <p>COMFORT: {scores.COMFORT}</p> */}
 
-            {/* Display the categories with the highest score */}
-            <div className="p-8 flex flex-col w-full">
+              {/* Display the categories with the highest score */}
+              <div className="p-8 flex flex-col w-full">
 
-              {scores.CONFIDENCE === highestScore && (
-                <>
-                  <p className='font-bold text-2xl w-full text-center mx-auto'>CONFIDENCE: {confidencePercentage}%</p>
-                  <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                  <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang perlu memancarkan pengaruh dalam setiap situasi. Desain busananya menujukkan kompetensi dan karakter yang kuat sehingga membuat Anda siap menjawab setiap tantangan dan terbang lebih tinggi.</p>
-                </>
-              )}
-              {scores.COUTURE === highestScore && (
-                <>
-                  <p className='font-bold text-2xl w-full text-center mx-auto'>COUTURE: {couturePercentage}%</p>
-                  <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                  <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang kerap jadi pusat perhatian. Menggunakan bahan mewah ekslusif dengan sentuhan batik yang unik, busana ini didesain khusus untuk ditampilkan pada peragaan busana kelas dunia. Saatnya Anda tampil istimewa.</p>
-                </>
-              )}
-              {scores.COMFORT === highestScore && (
-                <>
-                  <p className='font-bold text-2xl w-full text-center mx-auto'>COMFORT: {comfortPercentage}%</p>
-                  <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                  <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang senantiasa bergerak dinamis. Nikmati kesederhanaan dan kenyamanan dibalut dengan desain timeless yang membantu Anda melompat dari satu meeting ke meeting lain dengan penuh percaya diri.</p>
-                </>
-              )}
+                {scores.CONFIDENCE === highestScore && (
+                  <>
+                    <p className='font-bold text-2xl w-full text-center mx-auto'>CONFIDENCE: {confidencePercentage}%</p>
+                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
+                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang perlu memancarkan pengaruh dalam setiap situasi. Desain busananya menujukkan kompetensi dan karakter yang kuat sehingga membuat Anda siap menjawab setiap tantangan dan terbang lebih tinggi.</p>
+                  </>
+                )}
+                {scores.COUTURE === highestScore && (
+                  <>
+                    <p className='font-bold text-2xl w-full text-center mx-auto'>COUTURE: {couturePercentage}%</p>
+                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
+                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang kerap jadi pusat perhatian. Menggunakan bahan mewah ekslusif dengan sentuhan batik yang unik, busana ini didesain khusus untuk ditampilkan pada peragaan busana kelas dunia. Saatnya Anda tampil istimewa.</p>
+                  </>
+                )}
+                {scores.COMFORT === highestScore && (
+                  <>
+                    <p className='font-bold text-2xl w-full text-center mx-auto'>COMFORT: {comfortPercentage}%</p>
+                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
+                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang senantiasa bergerak dinamis. Nikmati kesederhanaan dan kenyamanan dibalut dengan desain timeless yang membantu Anda melompat dari satu meeting ke meeting lain dengan penuh percaya diri.</p>
+                  </>
+                )}
+              </div>
             </div>
+            <h1 className='font-semibold underline underline-offset-2'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
           </div>
         ) : null
       ) : (
