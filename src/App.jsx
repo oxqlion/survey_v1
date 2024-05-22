@@ -131,7 +131,7 @@ function App() {
                 )}
               </div>
             </div>
-            <h1 className='font-semibold underline underline-offset-2'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
+            <h1 className='font-semibold underline underline-offset-2 pb-8'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
           </div>
         ) : null
       ) : (
