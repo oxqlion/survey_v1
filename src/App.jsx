@@ -97,7 +97,7 @@ function App() {
         answered.length === 5 && submitted ? (
           <div>
             <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
-              <h1 className='font-light text-white text-3xl'>Choose your fit based on your personality</h1>
+              <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
             </div>
             {/* <h2 className='text-lg pt-4'>Results:</h2> */}
             {/* <p>CONFIDENCE: {scores.CONFIDENCE}</p>
@@ -139,7 +139,7 @@ function App() {
             {/* Banner section */}
             {/* <div className='p-2 bg-pink-200 rounded-md flex items-center justify-center w-full h-36'> */}
             <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
-              <h1 className='font-light text-white text-3xl'>Choose your fit based on your personality</h1>
+              <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
             </div>
 
             {/* Progress Bar */}
