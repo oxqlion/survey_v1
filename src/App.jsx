@@ -1,12 +1,24 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 
+import { MdShoppingBasket } from "react-icons/md";
+
+import Shopee from './assets/shopee.png'
+import Tokped from './assets/tokped.png'
+import Whatsapp from './assets/whatsapp.webp'
+
 function App() {
 
   const [answered, setAnswered] = useState([1]) // Remaining questions
   const [scores, setScores] = useState({ CONFIDENCE: 0, COUTURE: 0, COMFORT: 0 }) // Save scores for each category
   const [submitted, setSubmitted] = useState(false) // User submitted all the answers
   const [displayResult, setDisplayResult] = useState(false)
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleClick = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   const handleNext = () => {
     setAnswered([...answered, 1]);
@@ -91,21 +103,44 @@ function App() {
   ];
 
   return (
-    <div className='p-2 flex flex-col items-center justify-start w-full h-screen'>
+    <div className={`relative p-2 flex flex-col items-center justify-start w-full h-screen ${displayResult ? 'overflow-scroll' : ''} bg-[#FFFBF8] overflow-hidden`}>
+
+      {/* e-commerce btns */}
+      <a
+        href="https://shopee.co.id/ninanugrohostore"
+        className={`fixed ${isExpanded ? 'bottom-24' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
+      >
+        <img src={Shopee} alt="shopee" className='object-scale-down' />
+      </a>
+      <a
+        href="https://shopee.co.id/ninanugrohostore"
+        className={`fixed ${isExpanded ? 'bottom-48' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
+      >
+        <img src={Tokped} alt="shopee" className='object-scale-down ml-1' />
+      </a>
+      <a
+        href="https://shopee.co.id/ninanugrohostore"
+        className={`fixed ${isExpanded ? 'bottom-72' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
+      >
+        <img src={Whatsapp} alt="shopee" className='object-scale-down' />
+      </a>
+
+      <button
+        className="fixed bottom-0 right-0 md:m-12 m-8 flex items-center justify-center w-20 h-20 bg-[#6E5B57] shadow-xl rounded-full hover:cursor-pointer transition-transform transform hover:scale-110 ease-in-out"
+        onClick={handleClick}
+        style={{ transformOrigin: 'center' }}
+      >
+        <MdShoppingBasket className='text-4xl text-white transition-transform transform hover:scale-125 ease-in-out' style={{ transformOrigin: 'center' }} />
+      </button>
 
       {displayResult ? (
         answered.length === 5 && submitted ? (
-          <div className='flex flex-col w-full h-full items-center justify-around'>
+          <div className='flex flex-col w-full h-screen items-center justify-between'>
             <div className="flex flex-col">
-              <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
-                <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
+              <div className='p-2 bg-[url("//ninanugroho.com/cdn/shop/files/BDS_7395.jpg?v=1708074960&width=480")] bg-center bg-no-repeat bg-cover rounded-md flex flex-col items-center justify-center w-full h-36'>
+                <h1 className='font-light text-white md:text-4xl text-2xl text-center'>Simulator Nina Fashion Lab</h1>
+                <h1 className='font-semibold text-white md:text-xl text-md text-center pt-2'>Choose your fit based on your personality</h1>
               </div>
-              {/* <h2 className='text-lg pt-4'>Results:</h2> */}
-              {/* <p>CONFIDENCE: {scores.CONFIDENCE}</p>
-              <p>COUTURE: {scores.COUTURE}</p>
-              <p>COMFORT: {scores.COMFORT}</p> */}
-
-              {/* Display the categories with the highest score */}
               <div className="p-8 flex flex-col w-full">
 
                 {scores.CONFIDENCE === highestScore && (
@@ -131,7 +166,7 @@ function App() {
                 )}
               </div>
             </div>
-            <h1 className='font-semibold underline underline-offset-2 pb-8'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
+            <h1 className='font-semibold underline underline-offset-2 pb-36 md:pb-12'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
           </div>
         ) : null
       ) : (
@@ -141,22 +176,23 @@ function App() {
 
             {/* Banner section */}
             {/* <div className='p-2 bg-pink-200 rounded-md flex items-center justify-center w-full h-36'> */}
-            <div className='p-2 bg-[url("https://images.unsplash.com/photo-1534638286233-72a8f7713614?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-center rounded-md flex items-center justify-center w-full h-36'>
-              <h1 className='font-light text-white text-3xl text-center'>Choose your fit based on your personality</h1>
+            <div className='p-2 bg-[url("//ninanugroho.com/cdn/shop/files/BDS_7395.jpg?v=1708074960&width=480")] bg-center bg-no-repeat bg-cover rounded-md flex flex-col items-center justify-center w-full h-36'>
+              <h1 className='font-light text-white md:text-4xl text-2xl text-center'>Simulator Nina Fashion Lab</h1>
+              <h1 className='font-semibold text-white md:text-xl text-md text-center pt-2'>Choose your fit based on your personality</h1>
             </div>
 
             {/* Progress Bar */}
             <div className="relative flex items-center justify-center w-full h-12 pt-12 p-8">
               <div className="relative flex items-center justify-center w-full bg-gray-300 rounded-full h-2">
-                <div style={{ width: `${widthPercentage}%`, transition: 'width 0.5s' }} className="absolute left-0 flex items-center justify-center bg-red-700 rounded-full h-2">
+                <div style={{ width: `${widthPercentage}%`, transition: 'width 0.5s' }} className="absolute left-0 flex items-center justify-center bg-[#70754D] rounded-full h-2">
                 </div>
                 {answered.length != 5 ? (
 
-                  <div style={{ left: `${widthPercentage - 3}%`, transition: 'left 0.5s' }} className="absolute flex items-center justify-center w-12 h-12 bg-red-700 rounded-full">
+                  <div style={{ left: `${widthPercentage - 3}%`, transition: 'left 0.5s' }} className="absolute flex items-center justify-center w-12 h-12 bg-[#70754D] rounded-full">
                     <h1 className='text-white'>{answered.length}/5</h1>
                   </div>
                 ) : (
-                  <div style={{ left: `97%`, transition: 'left 0.5s' }} className="absolute flex items-center justify-center w-12 h-12 bg-red-700 rounded-full">
+                  <div style={{ left: `97%`, transition: 'left 0.5s' }} className="absolute flex items-center justify-center w-12 h-12 bg-[#70754D] rounded-full">
                     <h1 className='text-white'>{answered.length}/5</h1>
                   </div>
 
@@ -165,10 +201,10 @@ function App() {
             </div>
 
             <div className='flex flex-col items-center justify-center'>
-              <h2 className='font-semibold text-3xl text-center flex w-full p-8'>{questions[answered.length - 1].question}</h2>
+              <h2 className='font-light text-3xl text-center flex w-full p-8'>{questions[answered.length - 1].question}</h2>
               <div className="flex flex-col items-start justify-start gap-2 w-72">
                 {questions[answered.length - 1].options.map((option, index) => (
-                  <button className='bg-black rounded-md py-4 mr-auto text-white w-full' onClick={() => handleOptionClick(option.value)} key={index}>{option.text}</button>
+                  <button className='bg-[#6E5B57] rounded-md py-4 mr-auto text-white w-full' onClick={() => handleOptionClick(option.value)} key={index}>{option.text}</button>
                 ))}
               </div>
             </div>
