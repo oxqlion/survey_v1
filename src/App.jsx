@@ -107,7 +107,7 @@ function App() {
   ];
 
   return (
-    <div className={`relative p-2 flex flex-col items-center justify-start w-full ${displayResult ? 'h-full' : 'h-screen'} bg-[#FFFBF8] overflow-hidden`}>
+    <div className={`relative p-2 flex flex-col items-center justify-start w-full ${displayResult ? 'md:h-screen h-full' : 'h-screen'} bg-[#FFFBF8] overflow-hidden`}>
 
       {/* e-commerce btns */}
       <a
@@ -182,7 +182,7 @@ function App() {
                 </div>
               )}
             </div>
-            <h1 className='font-semibold underline underline-offset-2 pb-36 md:pb-12'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
+            <h1 className='font-semibold underline underline-offset-2 pt-12 pb-36 md:pb-12'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
           </div>
         ) : null
       ) : (
