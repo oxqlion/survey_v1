@@ -6,6 +6,10 @@ import { MdShoppingBasket } from "react-icons/md";
 import Shopee from './assets/shopee.png'
 import Tokped from './assets/tokped.png'
 import Whatsapp from './assets/whatsapp.webp'
+import Zalora from './assets/zalora.png'
+import Comfort from './assets/comfort.jpg'
+import Confidence from './assets/confidence.jpg'
+import Couture from './assets/couture.jpg'
 
 function App() {
 
@@ -103,7 +107,7 @@ function App() {
   ];
 
   return (
-    <div className={`relative p-2 flex flex-col items-center justify-start w-full h-screen ${displayResult ? 'overflow-scroll' : ''} bg-[#FFFBF8] overflow-hidden`}>
+    <div className={`relative p-2 flex flex-col items-center justify-start w-full ${displayResult ? 'h-full' : 'h-screen'} bg-[#FFFBF8] overflow-hidden`}>
 
       {/* e-commerce btns */}
       <a
@@ -113,16 +117,22 @@ function App() {
         <img src={Shopee} alt="shopee" className='object-scale-down' />
       </a>
       <a
-        href="https://shopee.co.id/ninanugrohostore"
+        href="https://www.tokopedia.com/ninanugroho"
         className={`fixed ${isExpanded ? 'bottom-48' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
       >
         <img src={Tokped} alt="shopee" className='object-scale-down ml-1' />
       </a>
       <a
-        href="https://shopee.co.id/ninanugrohostore"
+        href=" https://api.whatsapp.com/send/?phone=%2B6287881965512&text=Hallo+Mba+Nisa%2C+saya+tertarik+dengan+Busana+ini.%0Asaya+biasa+pakai+size%3A+%0A%0A2in1+Asymmetric+Dune+Shirt+%0Ahttps%3A%2F%2Fninanugroho.com%2Fproducts%2F2in1-asymmetric-dune-shirt&type=phone_number&app_absent=0"
         className={`fixed ${isExpanded ? 'bottom-72' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
       >
         <img src={Whatsapp} alt="shopee" className='object-scale-down' />
+      </a>
+      <a
+        href=" https://www.zalora.co.id/c/nina-nugroho/b-13506"
+        className={`fixed ${isExpanded ? 'bottom-96' : 'bottom-0'} right-0 md:m-12 m-8 flex w-20 h-20 p-4 bg-white shadow-xl rounded-full transition-all ease-in-out`}
+      >
+        <img src={Zalora} alt="shopee" className='object-scale-down' />
       </a>
 
       <button
@@ -135,36 +145,42 @@ function App() {
 
       {displayResult ? (
         answered.length === 5 && submitted ? (
-          <div className='flex flex-col w-full h-screen items-center justify-between'>
-            <div className="flex flex-col">
-              <div className='p-2 bg-[url("//ninanugroho.com/cdn/shop/files/BDS_7395.jpg?v=1708074960&width=480")] bg-center bg-no-repeat bg-cover rounded-md flex flex-col items-center justify-center w-full h-36'>
+          <div className='flex flex-col w-full h-full overflow-scroll items-center justify-between'>
+            {/* <div className='p-2 bg-[url("//ninanugroho.com/cdn/shop/files/BDS_7395.jpg?v=1708074960&width=480")] bg-center bg-no-repeat bg-cover rounded-md flex flex-col items-center justify-center w-full h-36'>
                 <h1 className='font-light text-white md:text-4xl text-2xl text-center'>Simulator Nina Fashion Lab</h1>
                 <h1 className='font-semibold text-white md:text-xl text-md text-center pt-2'>Choose your fit based on your personality</h1>
-              </div>
-              <div className="p-8 flex flex-col w-full">
-
-                {scores.CONFIDENCE === highestScore && (
-                  <>
-                    <p className='font-bold text-2xl w-full text-center mx-auto'>CONFIDENCE: {confidencePercentage}%</p>
-                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang perlu memancarkan pengaruh dalam setiap situasi. Desain busananya menujukkan kompetensi dan karakter yang kuat sehingga membuat Anda siap menjawab setiap tantangan dan terbang lebih tinggi.</p>
-                  </>
-                )}
-                {scores.COUTURE === highestScore && (
-                  <>
-                    <p className='font-bold text-2xl w-full text-center mx-auto'>COUTURE: {couturePercentage}%</p>
-                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang kerap jadi pusat perhatian. Menggunakan bahan mewah ekslusif dengan sentuhan batik yang unik, busana ini didesain khusus untuk ditampilkan pada peragaan busana kelas dunia. Saatnya Anda tampil istimewa.</p>
-                  </>
-                )}
-                {scores.COMFORT === highestScore && (
-                  <>
-                    <p className='font-bold text-2xl w-full text-center mx-auto'>COMFORT: {comfortPercentage}%</p>
-                    <span className="rounded-full my-8 mx-auto flex w-1/3 h-0.5 bg-gray-300"></span>
-                    <p className='font-light text-lg pb-8 w-1/2 text-center mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang senantiasa bergerak dinamis. Nikmati kesederhanaan dan kenyamanan dibalut dengan desain timeless yang membantu Anda melompat dari satu meeting ke meeting lain dengan penuh percaya diri.</p>
-                  </>
-                )}
-              </div>
+              </div> */}
+            <div className="flex flex-col w-full h-full">
+              {scores.CONFIDENCE === highestScore && (
+                <div className="md:flex xs:flex xs:flex-col-reverse h-full md:h-[350px] w-full px-0 md:px-24 md:py-8">
+                  <div className='flex flex-col justify-end px-start w-full md:px-12 gap-4'>
+                    <p className='font-light text-4xl ml-auto'>CONFIDENCE: {confidencePercentage}%</p>
+                    <span className="rounded-full flex ml-auto w-1/3 h-0.5 bg-gray-700"></span>
+                    <p className='font-light text-lg text-right mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang perlu memancarkan pengaruh dalam setiap situasi. Desain busananya menujukkan kompetensi dan karakter yang kuat sehingga membuat Anda siap menjawab setiap tantangan dan terbang lebih tinggi.</p>
+                  </div>
+                  <img src={Confidence} alt="confidence" className='flex w-[550px] h-full object-cover' />
+                </div>
+              )}
+              {scores.COUTURE === highestScore && (
+                <div className="md:flex xs:flex xs:flex-col-reverse h-full md:h-[350px] w-full px-0 md:px-24 md:py-8">
+                  <div className='flex flex-col justify-end w-full md:px-12 gap-4'>
+                    <p className='font-light text-4xl ml-auto'>COUTURE: {couturePercentage}%</p>
+                    <span className="rounded-full flex ml-auto w-1/3 h-0.5 bg-gray-700"></span>
+                    <p className='font-light text-lg text-right mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang kerap jadi pusat perhatian. Menggunakan bahan mewah ekslusif dengan sentuhan batik yang unik, busana ini didesain khusus untuk ditampilkan pada peragaan busana kelas dunia. Saatnya Anda tampil istimewa.</p>
+                  </div>
+                  <img src={Couture} alt="couture" className='flex w-[550px] h-full object-cover' />
+                </div>
+              )}
+              {scores.COMFORT === highestScore && (
+                <div className="md:flex xs:flex xs:flex-col-reverse h-full md:h-[350px] w-full px-0 md:px-24 md:py-8">
+                  <div className='flex flex-col justify-end w-full md:px-12 gap-4'>
+                    <p className='font-light text-4xl ml-auto'>COMFORT: {comfortPercentage}%</p>
+                    <span className="rounded-full flex ml-auto w-1/3 h-0.5 bg-gray-700"></span>
+                    <p className='font-light text-lg text-right mx-auto w-full flex'>Kategori busana kerja ini dibuat untuk profesional yang senantiasa bergerak dinamis. Nikmati kesederhanaan dan kenyamanan dibalut dengan desain timeless yang membantu Anda melompat dari satu meeting ke meeting lain dengan penuh percaya diri.</p>
+                  </div>
+                  <img src={Comfort} alt="comfort" className='flex w-[550px] h-full object-cover' />
+                </div>
+              )}
             </div>
             <h1 className='font-semibold underline underline-offset-2 pb-36 md:pb-12'>For further information please <a href=" https://ninanugroho.com/" className='text-blue-500'>click here</a></h1>
           </div>
